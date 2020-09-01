@@ -1,0 +1,16 @@
+
+ create table orders
+ (customer_id varchar(20)foreign key,
+ product_id varchar(20)foreign key,
+ quantity number,
+ total_amount number);
+ create table customer
+ (Customer_id varchar(20) primary key,
+ customer_name varchar(20)not null,
+ customer_tel number);
+ create table product 
+(Product_id varchar(20) primary key,
+ product_name varchar(20)not null,
+ price number check (price>0));
+alter table product add category varchar(20);
+alter table orders add order_date date default (sysdate);
